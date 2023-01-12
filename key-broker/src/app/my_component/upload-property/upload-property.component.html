@@ -1,0 +1,179 @@
+<app-side-menu-bar></app-side-menu-bar>
+<section class="home-section">
+  <nav>
+    <div class="sidebar-button">
+      <i class='bx bx-menu sidebarBtn'></i>
+      <span class="dashboard">Upload Form</span>
+    </div>
+    <!-- <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <i class='bx bx-search'></i>
+        </div> -->
+    <div class="profile-details">
+      <!--<img src="images/profile.jpg" alt="">-->
+      <span class="admin_name">Hamdan</span>
+      <i class='bx bx-chevron-down'></i>
+    </div>
+  </nav>
+</section>
+<div style="margin-left: 30%; width: 900px; margin-top: 3%;">
+
+  <h2>Form</h2>
+  <p>Plz enter all the required information</p>
+
+  <div style="overflow:scroll; height: 400px; " class="container">
+    <form #crTeam="ngForm" (ngSubmit)="submit(crTeam)">
+      <!-- <p style="color: red;" *ngIf="check">plz fill all requirements</p> -->
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Your Name</label>
+        </div>
+        <div class="col-75">
+          <input required name="name" [(ngModel)]="fullName" type="text" id="fname" name="firstname"
+            placeholder="Full Name">
+        </div>
+        <div class="col-25">
+          <label for="fname">Property Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" [(ngModel)]="propertyName" id="fname" name="firstname" placeholder="Propert Name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Address</label>
+        </div>
+        <div class="col-75">
+          <input type="text" [(ngModel)]="address" id="lname" name="lastname" placeholder="Address">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">Select Area</label>
+        </div>
+
+        <div class="col-75">
+          <select (change)="area($event)">
+            <option value="australia">Select Area</option>
+            <option value="Gulshan">Gulshan</option>
+            <option value="Saddar">Saddar</option>
+            <option value="Water Pump">Water Pump</option>
+            <option value="Malir">Malir</option>
+            <option value="Johr">Johr</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">Select Category</label>
+        </div>
+
+        <div class="col-75">
+          <select (change)="category($event)">
+            <option value="australia">Select Category</option>
+            <option value="Sale">Sale</option>
+            <option value="Rent">Rent</option>
+
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">Extra Datails</label>
+        </div>
+        <div class="col-75">
+          <textarea [(ngModel)]="detail" id="subject" name="subject" placeholder="Write something.."
+            style="height:200px"></textarea>
+        </div>
+      </div>
+      <!--  -->
+      <!-- <img height="200" src={{url}}  alt=""><br> -->
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Please upload any 4 pictures of your house.</label>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Upload Picture</label>
+        </div>
+        <div style="margin-top:15px;" class="col-75">
+          <input (change)="onselectFile1($event)" type="file">
+          <!-- <img src={{imageUrl}} alt="">  -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Upload Picture</label>
+        </div>
+        <div style="margin-top:15px;" class="col-75">
+          <input (change)="onselectFile2($event)" type="file">
+          <!-- <img src={{imageUrl}} alt="">         -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Upload Picture</label>
+        </div>
+        <div style="margin-top:15px;" class="col-75">
+          <input (change)="onselectFile3($event)" type="file">
+          <!-- <img src={{imageUrl}} alt="">         -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Upload Picture</label>
+        </div>
+        <div style="margin-top:15px;" class="col-75">
+          <input (change)="onselectFile4($event)" type="file">
+          <!-- <img src={{imageUrl}} alt="">         -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Size</label>
+        </div>
+        <div style="margin-top: 15px;" class="col-75">
+          <input [(ngModel)]="size" type="number" id="fname" name="firstname" placeholder="Size in sq feets">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Rooms</label>
+        </div>
+        <div style="margin-top: 15px;" class="col-75">
+          <input [(ngModel)]="room" type="number" id="fname" name="firstname" placeholder="Rooms">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Price</label>
+        </div>
+        <div style="margin-top: 15px;" class="col-75">
+          <input [(ngModel)]="price" type="number" id="fname" name="firstname" placeholder="Price">
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Phone No</label>
+        </div>
+        <div style="margin-top: 15px;" class="col-75">
+          <input [(ngModel)]="phoneNo" type="number" id="fname" name="firstname" placeholder="Phone No">
+        </div>
+
+      </div>
+
+      <br>
+      <p style="color: red;" *ngIf="check">plz fill all fields</p>
+      <br>
+      <div class="row">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+</div>

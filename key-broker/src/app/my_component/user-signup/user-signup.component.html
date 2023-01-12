@@ -1,0 +1,50 @@
+<img style="height: 100px;" src="assets/images/keybrokerlogo.png" alt="">
+
+<body>
+    <!-- <h2>Weekly Coding Challenge #1: Sign in/up Form</h2> -->
+    <div class="container" id="container">
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <a routerLink="/"><button class="ghost" id="signIn">Sign In</button></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-container sign-up-container">
+
+            <h1>Create Account</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" class="form-control" [(ngModel)]="first_name" placeholder="first name" />
+            <input type="text" class="form-control" [(ngModel)]="last_name" placeholder="last name" />
+            <input type="email" class="form-control" [(ngModel)]="email" placeholder="email" />
+            <input type="text" class="form-control" [(ngModel)]="username" placeholder="username" />
+            <input type="password" class="form-control" [(ngModel)]="password" placeholder="password" />
+            
+            <button class="btn_adduser" (click)="addUser()">Sign Up</button>
+            <div *ngIf="check">
+                <p style="color:red; margin-top: -150%; margin-left: 1%; font-size: 20px ;">Please fill all fields</p>
+            </div>
+            <div *ngIf="signupdata">
+                <p style="color:red; margin-top: -150%; margin-left: 1%; font-size: 20px ;">{{msg1}}</p>
+            </div>
+            <div *ngIf="signupdata1">
+                <p style="color:red; margin-top: -150%; margin-left: 1%; font-size: 20px ;">{{msg2}}</p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</body>

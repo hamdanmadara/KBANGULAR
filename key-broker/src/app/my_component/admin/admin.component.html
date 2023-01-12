@@ -1,0 +1,235 @@
+<div class="sidebar">
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus'></i>
+        <span class="logo_name">CodingLab</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a routerLink="/property" >
+              <i class='bx bx-grid-alt' ></i>
+              <span class="links_name">Property for sale</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/rent" >
+              <i class='bx bx-box' ></i>
+              <span class="links_name">Property For Rent</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/profile" >
+              <i class='bx bx-list-ul' ></i>
+              <span class="links_name">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/blog" >
+              <i class='bx bx-pie-chart-alt-2' ></i>
+              <span class="links_name">Blogs</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/about" >
+              <i class='bx bx-coin-stack' ></i>
+              <span class="links_name">About</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/contact" >
+              <i class='bx bx-book-alt' ></i>
+              <span class="links_name">Contacts</span>
+            </a>
+          </li>
+        
+        <li class="log_out">
+            <a href="#">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">Log out</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<section class="home-section">
+    <nav>
+        <div class="sidebar-button">
+            <i class='bx bx-menu sidebarBtn'></i>
+            <span class="dashboard">Admin Dashboard</span>
+        </div>
+        
+        <div class="profile-details">
+            <!--<img src="images/profile.jpg" alt="">-->
+            <span class="admin_name">Hamdan</span>
+            <i class='bx bx-chevron-down'></i>
+        </div>
+    </nav>
+
+    <div class="home-content">
+        <div class="overview-boxes">
+            <div class="box">
+                <div class="right-side">
+                    <div class="box-topic">Total Users</div>
+                    <div class="number">{{lenghtOfUserList}}</div>
+                    <div class="indicator">
+                        <i class='bx bx-up-arrow-alt'></i>
+                        <span class="text">Up from yesterday</span>
+                    </div>
+                </div>
+                <i class='bx bx-cart-alt cart'></i>
+            </div>
+            <div class="box">
+                <div class="right-side">
+                    <div class="box-topic">Total Properties</div>
+                    <div class="number">{{lenghtOfProperty}}</div>
+                    <div class="indicator">
+                        <i class='bx bx-up-arrow-alt'></i>
+                        <span class="text">Up from yesterday</span>
+                    </div>
+                </div>
+                <i class='bx bxs-cart-add cart two'></i>
+            </div>
+            <div class="box">
+                <div class="right-side">
+                    <div class="box-topic">For Sale</div>
+                    <div class="number">{{lenghtOfPropertySale}}</div>
+                    <div class="indicator">
+                        <i class='bx bx-up-arrow-alt'></i>
+                        <span class="text">Up from yesterday</span>
+                    </div>
+                </div>
+                <i class='bx bx-cart cart three'></i>
+            </div>
+            <div class="box">
+                <div class="right-side">
+                    <div class="box-topic">For Rent</div>
+                    <div class="number">{{lenghtOfPropertyRent}}</div>
+                    <div class="indicator">
+                        <i class='bx bx-down-arrow-alt down'></i>
+                        <span class="text">Down From Today</span>
+                    </div>
+                </div>
+                <i class='bx bxs-cart-download cart four'></i>
+            </div>
+        </div>
+
+        <div class="sales-boxes">
+            <div class="recent-sales box">
+                <div class="title">Records</div>
+                <div class="sales-details">
+                    <ul class="details">
+                        <li class="topic">Saler Name</li>
+                        <li *ngFor="let buyer of propertyForBuyerList"><a href="#">{{buyer.nameofuser}}</a></li>
+                        <!-- <li><a href="#">Ahmed</a></li>
+                        <li><a href="#">Razzak</a></li>
+                        <li><a href="#">Ali</a></li>
+                        <li><a href="#">Ahmed</a></li>
+                        <li><a href="#">Razzak</a></li> -->
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Phone No</li>
+                        <li  *ngFor="let buyer of propertyForBuyerList"><a href="#">{{buyer.phoneno}}</a></li>
+                        <!-- <li><a href="#">03213080761</a></li>
+                        <li><a href="#">03003080761</a></li>
+                        <li><a href="#">03093080761</a></li>
+                        <li><a href="#">03213080761</a></li>
+                        <li><a href="#">03003080761</a></li> -->
+                       
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Buyer Name</li>
+                        <li *ngFor="let buyer of buyerList"><a href="#">{{buyer[1]}}</a></li>
+                        <!-- <li><a href="#">Noman</a></li>
+                        <li><a href="#">Hussain</a></li>
+                        <li><a href="#">Fahad</a></li>
+                        <li><a href="#">Noman</a></li>
+                        <li><a href="#">Hussain</a></li> -->
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Phone No</li>
+                        <li *ngFor="let buyer of buyerList"><a >{{buyer[3]}}</a></li>
+                        <!-- <li><a href="#">03212508791</a></li>
+                        <li><a href="#">03212508792</a></li>
+                        <li><a href="#">03212508790</a></li>
+                        <li><a href="#">03212508791</a></li>
+                        <li><a href="#">03212508792</a></li> -->
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Property Id</li>
+                        <li *ngFor="let buyer of buyerList"><a >{{buyer[2]}}</a></li>
+                        <!-- <li><a href="#">abc1131</a></li>
+                        <li><a href="#">abc1553</a></li>
+                        <li><a href="#">abc5670</a></li>
+                        <li><a href="#">abc1235</a></li>
+                        <li><a href="#">abc1230</a></li> -->
+                    </ul>
+                </div>
+               
+            </div>
+            
+            
+        </div>
+        <!-- <form>
+            <input type="text" name="search" placeholder="Search Guid">
+            <button class="button">Search</button>
+          </form>
+          <div style="margin-bottom: 10px;">
+            <h3 style="margin-left: 50px;">Property</h3>
+          <a routerLink="/property_detail">
+            <div class="card">
+              <img src="assets/images/homeimage.jpg" alt="Denim Jeans" style="width:100%">
+              <h1>The Bungalow</h1>
+              <p class="price">60 lac</p>
+              <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
+              </p>
+              <p><button>Show Details</button></p>
+            </div></a>
+        </div> -->
+        <div style="margin-left: 20px; margin-top: 40px;">
+         <input style="margin-left:900px;margin-bottom:40px" type="text" [(ngModel)]="id" placeholder="Serach id"/>
+
+<!-- <table border="1" width="100%">
+  <tr>
+    <th>No.</th>
+    <th>Id</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let customer of users | customerEmailFilter:email;let i = index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{customer.id}}</td>
+    <td>{{customer.email}}</td>
+  </tr>
+
+</table>  -->
+<table style="margin-bottom: 100px;" border="1" id="customers1">
+    <tr>
+        <th>Id.</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Address</th>
+        <th>Area</th>
+        <th>Delete</th>
+        
+      </tr>
+      <tr *ngFor="let property of propertyList | customerEmailFilter:id;let i = index">
+        <!-- <td scope="row">{{i+1}}</td>
+        <td>{{customer.id}}</td>
+        <td>{{customer.email}}</td> -->
+        <td >{{property.id}}</td>
+        <td>{{property.nameofuser}}</td>
+        <td>{{property.price}}</td>
+        <td>{{property.address}}</td>
+        <td>{{property.area}}</td>
+        <td><a (click)="delete(property.id)"><img style="height: 20px;" src="assets/images/trash.png" alt=""></a></td>
+        
+      </tr>
+    
+    
+  </table>
+</div>
+        
+    </div>
+</section>
+
+
+  
+ 
+  

@@ -1,0 +1,123 @@
+<app-side-menu-bar></app-side-menu-bar>
+<section class="home-section">
+    <nav>
+        <div class="sidebar-button">
+            <i class='bx bx-menu sidebarBtn'></i>
+            <span class="dashboard">Property For Rent</span>
+        </div>
+        <!-- <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <i class='bx bx-search'></i>
+        </div> -->
+        <div class="profile-details">
+            <!--<img src="images/profile.jpg" alt="">-->
+            <span class="admin_name">Hamdan</span>
+            <i class='bx bx-chevron-down'></i>
+        </div>
+    </nav>
+    </section>
+  
+  <!-- kpi -->
+  
+  <div style="margin-left: 10%; background: #f5f5f5;">
+    <!-- <p style="margin-top:20px;margin-left: 115px;font-size: 30px;"></p> -->
+    <div id="container">
+      <div style="margin-top: 20px;" class="kpi-card orange">
+        <span class="card-value"># {{countGulshan}} </span>
+  
+        <span class="card-text">Total Houses
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gulshan</span>
+        <i class="fas fa-shopping-cart icon"></i>
+      </div>
+  
+  
+      <div style="margin-top: 20px;" class="kpi-card purple">
+        <span class="card-value"># {{countSaddar}} </span>
+        <span class="card-text">Total Houses
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Saddar</span>
+        <i class="fas fa-shopping-cart icon"></i>
+      </div>
+  
+      <div style="margin-top: 20px;" class="kpi-card grey-dark">
+        <span class="card-value"># {{countWaterPump}} </span>
+        <span class="card-text">Total Houses
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Water
+          Pump</span>
+        <i class="fas fa-shopping-cart icon"></i>
+      </div>
+  
+      <div style="margin-top: 20px;" class="kpi-card red">
+        <span class="card-value"># {{countMalir}} </span>
+        <span class="card-text">Total Houses
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Malir</span>
+        <i class="fas fa-shopping-cart icon"></i>
+      </div>
+  
+      <div style="margin-top: 20px;" class="kpi-card blue orange">
+        <span class="card-value"># {{countJohr}} </span>
+        <span class="card-text">Total Houses
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Johr</span>
+        <i class="fas fa-shopping-cart icon"></i>
+      </div>
+    </div>
+  
+    <div style="margin-left: 918px; margin-top: 40px; width: 80%;" class="container-fuild">
+      <div class="dropdwon_box">
+        <div class="col-md-4">
+          <select (change)="test($event)" id="select-option"
+            class="form-control">
+            <option  [ngValue]="null" selected disabled>Select Area</option>
+            <option >Gulshan</option>
+            <option >Saddar</option>
+            <option >Water Pump</option>
+            <option >Malir</option>
+            <option >Johr</option>
+          </select>
+          <br>
+  
+        </div>
+      </div>
+    </div>
+  
+  
+    <!-- property boxes display -->
+    <div style="margin-left: 70px; margin-top: 30px;">
+      <a *ngFor="let item of propertyList"  routerLink="/property_detail/{{item.id}}">
+        <div  class="card">
+          <img src="assets/images/homeimage.jpg" alt="Denim Jeans" style="width:100%">
+          <h1>{{item.nameofpropery}}</h1>
+          <p class="price">{{item.price}} lac</p>
+          <p>{{item.detail}}
+          </p>
+          <p><button>Show Details</button></p>
+        </div></a>
+      <!-- <div class="card">
+        <img src="assets/images/homeimage.jpg" alt="Denim Jeans" style="width:100%">
+        <h1>The Bungalow</h1>
+        <p class="price">80 lac</p>
+        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
+        </p>
+        <p><button>Show Details</button></p>
+      </div>
+      <div class="card">
+        <img src="assets/images/homeimage.jpg" alt="Denim Jeans" style="width:100%">
+        <h1>The Bungalow</h1>
+        <p class="price">2 crore</p>
+        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
+        </p>
+        <p><button>Show Details</button></p>
+      </div>
+      <div class="card">
+        <img src="assets/images/homeimage.jpg" alt="Denim Jeans" style="width:100%">
+        <h1>The Bungalow</h1>
+        <p class="price">3 crore</p>
+        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.
+        </p>
+        <p><button>Show Details</button></p>
+      </div> -->
+  
+    </div>
+  
+  
+  
+  </div>

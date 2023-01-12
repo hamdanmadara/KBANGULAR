@@ -1,0 +1,21 @@
+<!-- <hello name="{{ name }}"></hello> -->
+<!-- <input #Image type="file" (change)="handleFileInput($event.target.files)"/>
+<img width="100%" *ngIf="imageUrl" [src]="imageUrl" class="image"> -->
+
+<img height="200" src={{url}} alt=""><br>
+<input (change)="onselectFile($event)" type="file">
+<img src={{imageUrl}} alt="">
+
+<div style="margin-top: 100px;">
+
+
+
+    <input  type="file" (change)="onFileUpload($event)" #selectFile>
+
+
+</div>
+<!-- <img src= alt=""> -->
+<!-- <img src="./assets/images/mrHankey.jpg" alt=""> -->
+
+<!-- <img width="80" src="https://picsum.photos/200/300">
+<button (click)="downloadImg('https://picsum.photos/200/300','photo1')">Download</button> -->

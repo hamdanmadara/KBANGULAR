@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head> -->
+
+<img style="height: 100px;" src="assets/images/keybrokerlogo.png" alt="">
+<body>
+    <!-- <h2>Weekly Coding Challenge #1: Sign in/up Form</h2> -->
+    <div class="container" id="container">
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <a routerLink="/signup"> <button class="ghost" id="signUp">Sign Up</button></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="form-container sign-in-container">
+
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input type="text" [(ngModel)]="username" placeholder="username" />
+            <input type="password" [(ngModel)]="password" placeholder="password" />
+            <a href="#">Forgot your password?</a>
+            <a  ><button class="btn_loginuser" (click)="loginUser()"> Sign In</button></a><br>
+            <!-- <div *ngIf="logindata">
+                <a href="/course"><button class="btn_loginuser1">proceed</button></a>
+            </div> -->
+            <div *ngIf="check">
+                <p style="color:red; margin-top: -135%; margin-left: 1%; font-size: 20px ;">Please fill all fields</p>
+            </div>
+            <div *ngIf="logindata">
+                <p style="color:red; margin-top: -135%; margin-left: 1%; font-size: 20px ;">wrong credentials</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<!-- </html> -->
